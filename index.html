@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAKRAVARTIN</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+</head>
+<body data-aos-easing="ease-in-out" data-aos-duration="1000">
+    <section class="wrapper">
+        <!-- Navbar Section -->
+        <section class="container">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark w-100 py-3 bg-transparent" data-aos="fade-down">
+                <div class="container fluid">
+
+                    <a class="navbar-brand" href="#">
+                        <img src="image/logo.png" alt="Logo" width="130">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="image/icon/lines.png" alt="Logo" width="20">
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0 " >
+                            <li class="nav-item px-3">
+                                <a class="nav-link" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link" href="#about">Gallery</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        
+        <!-- Header Section -->
+        <section class="home">
+            <div class="banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-12 col-12">
+                            <div class="desc" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="foto-home"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-sm-12 col-12">
+                            <div class="desc" data-aos="fade-left" data-aos-duration="1000">
+                                <h1><strong style="color: #000;">CAKRAVARTIN</strong></h1>
+                                <h2>Let’s paint the pain</h2>
+                                <p>Brand Clothing Hoodie Paint menghadirkan inovasi desain hoodie yang unik, menampilkan karakter-karakter epik dari budaya Bali yang dilukis secara manual oleh pelukis muda berbakat. Setiap hoodie adalah karya seni yang memadukan tradisi dengan gaya modern, menjadikannya pilihan sempurna bagi Anda yang ingin tampil beda dan penuh makna.</p>
+                                <button class="home-button">Learn More</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="bg-produk" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <h1>My Produk</h1>
+                    </div>
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <div class="card" >
+                            <img src="image/produk/produk1.png" alt="produk">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <div class="card">
+                            <img src="image/produk/produk2.png" class="card-img-top" alt="produk">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="text-center p-4">
+                <p class="text-reset ">©2024 Copyright: <strong>Putu Ryan Darmayasa</strong> </p>
+            </div>
+        </section>
+    </section>
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="vendor/typed.js/typed.umd.js"></script>
+    <script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $(".navbar.fixed-top");
+				$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+			});
+		});
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var typed = new Typed('.typed-text', {
+                strings: ["Mahasiswa PTI Angkatan 2021"],
+                typeSpeed: 50,
+                showCursor: false,
+            });
+        });
+        
+        AOS.init({
+            duration: 1200, // Atur durasi default di sini jika diperlukan
+        });
+
+        const fotoHome = document.querySelector('.foto-home');
+
+    // Array berisi URL gambar-gambar yang ingin ditampilkan
+    const images = [
+        'image/gatot2.png',
+        'image/dawdad2.png',
+        'image/srikandi2.png'
+    ];
+
+    let currentIndex = 0;
+
+    function changeImage() {
+        fotoHome.style.backgroundImage = `url(${images[currentIndex]})`;
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    // Set interval untuk mengganti gambar setiap 5 detik
+    setInterval(changeImage, 5000);
+
+    // Inisialisasi gambar pertama
+    changeImage();
+
+	</script>
+</body>
+</html>
